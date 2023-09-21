@@ -1,0 +1,63 @@
+// Utilities
+// stylelint-disable-next-line scss/dollar-variable-default
+$utilities: map-merge(
+  $utilities,
+  (
+    // scss-docs-start utils-vertical-align
+    'letter-spacing':
+      (
+        responsive: true,
+        property: letter-spacing,
+        class: ls,
+        values: $ls-spacers
+      ),
+    // scss-docs-start utils-position
+    'position':
+      (
+        responsive: true,
+        property: position,
+        values: static relative absolute fixed sticky
+      ),
+    'font-size': (
+      responsive: true,
+      property: font-size,
+      class: fs,
+      values: $font-sizes
+    ),
+    'background-size': (
+      property: background-size,
+      class: bg-size,
+      values: cover contain auto
+    ),
+    'border-start': (
+      responsive: true,
+      property: border-left,
+      class: border-start,
+      values: (
+        null: var(--#{$prefix}border-width) var(--#{$prefix}border-style)
+          var(--#{$prefix}border-color),
+        0: 0
+      )
+    ),
+    'border-end': (
+      responsive: true,
+      property: border-right,
+      class: border-end,
+      values: (
+        null: var(--#{$prefix}border-width) var(--#{$prefix}border-style)
+          var(--#{$prefix}border-color),
+        0: 0
+      )
+    ),
+    'border-bottom': (
+      responsive: true,
+      property: border-bottom,
+      class: border-bottom,
+      values: (
+        null: var(--#{$prefix}border-width) var(--#{$prefix}border-style)
+          var(--#{$prefix}border-color),
+        0: 0
+      )
+    )
+  )
+);

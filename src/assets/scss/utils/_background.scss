@@ -1,7 +1,74 @@
 .bg-header {
-  background: linear-gradient(180deg, $purple-500 0%, $purple-900 100%);
+  background-image: url('@/assets/img/week8-ai/home_background.png');
 }
 
-.bg-transparent {
-  background-color: transparent;
+.bg-introduction {
+  // background-image: url('@/assets/img/week8-ai/carousel_background.png');
+  background:
+    url('@/assets/img/week8-ai/carousel_background.png') left top no-repeat,
+    radial-gradient(50% 50% at 50% 50%, $purple-200 0%, $dark 100%) right top no-repeat;
+  background-size: 948px, auto;
+}
+
+.bg-gradient-200 {
+  background: radial-gradient(50% 50% at 50% 50%, $purple-200 0%, $dark 100%);
+}
+
+.bg-gradient-500 {
+  background: linear-gradient(90deg, $purple-500 1.22%, $purple-900 116.05%);
+}
+
+.bg-gradient-700 {
+  background: radial-gradient(50% 50% at 50% 50%, $purple-700 0%, $dark 100%);
+}
+
+.bg-gradient-700-reverse {
+  background: radial-gradient(50% 50% at 50% 50%, $dark 0%, $purple-700 100%);
+}
+
+.bg-default {
+  background-position: top;
+}
+
+.bg-norepeat {
+  background-repeat: no-repeat;
+}
+
+.bg-position-center {
+  background-position: center;
+}
+
+%bg-copy {
+  background-color: rgba(#000, 0.5);
+  background-blend-mode: darken;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: ease-in 0.3s;
+  @media (min-width: 768px) {
+    background-color: rgba(#000, 1);
+    &:hover {
+      background-color: rgba(#000, 0.5);
+    }
+  }
+}
+
+.bg-DianeVertical {
+  background-image: url('@/assets/img/week8-ai/diane_vertical.png');
+  @extend %bg-copy;
+}
+
+.bg-FelixVertical {
+  background-image: url('@/assets/img/week8-ai/felix_vertical.png');
+  @extend %bg-copy;
+}
+
+.bg-KarinaVertical {
+  background-image: url('@/assets/img/week8-ai/karina_vertical.png');
+  @extend %bg-copy;
+}
+
+.bg-VitoVertical {
+  background-image: url('@/assets/img/week8-ai/vito_vertical.png');
+  @extend %bg-copy;
 }

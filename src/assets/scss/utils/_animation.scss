@@ -1,0 +1,19 @@
+@keyframes rotate360 {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@mixin animation-set($name, $duration, $iteration, $timimgFunction) {
+  animation-name: $name;
+  animation-duration: $duration;
+  animation-iteration-count: $iteration;
+  animation-timing-function: $timimgFunction;
+}
+
+.rotate360-infinite {
+  @include animation-set(rotate360, 8s, infinite, linear);
+}

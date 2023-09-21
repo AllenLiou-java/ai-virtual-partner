@@ -1,9 +1,9 @@
 <template>
   <div>
-    <div class="pt-17 pt-lg-20 bg-header" style="min-height: 100vh">
-      <AppHeader />
+    <AppHeader />
+    <div class="pt-17 pt-lg-20">
+      <RouterView />
     </div>
-    <RouterView />
   </div>
   <Appfooter />
 </template>

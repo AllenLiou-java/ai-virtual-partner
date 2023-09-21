@@ -1,7 +1,7 @@
 <template>
   <!-- for pc -->
   <nav
-    class="navbar navbar-expand-lg bg-transparent py-4 fixed-top d-none d-lg-block border-bottom"
+    class="navbar navbar-expand-lg bg-header py-4 d-none d-lg-block border-bottom position-absolute"
   >
     <div class="container d-flex justify-content-between align-items-center">
       <h1 class="fs-8 font-Shrikhand fw-normal">
@@ -9,32 +9,36 @@
       </h1>
       <div>
         <ul class="navbar-nav mt-6 mt-lg-0">
-          <li class="px-3 py-2 text-center">
-            <router-link to="/product" class="nav-link">產品</router-link>
+          <li class="text-center">
+            <router-link
+              :to="{ name: 'product', params: { productName: 'Diane' } }"
+              class="px-5 py-2"
+              >產品</router-link
+            >
           </li>
-          <li class="px-3 py-2 text-center">
-            <router-link to="/aboutUs" class="nav-link">關於我們</router-link>
+          <li class="text-center">
+            <router-link to="/aboutUs" class="px-5 py-2">關於我們</router-link>
           </li>
-          <li class="px-3 py-2 text-center">
-            <router-link to="/news" class="nav-link">最新消息</router-link>
+          <li class="text-center">
+            <router-link to="/news" class="px-5 py-2">最新消息</router-link>
           </li>
-          <li class="px-3 py-2 text-center">
-            <router-link to="/faq" class="nav-link">FAQ</router-link>
+          <li class="text-center">
+            <router-link to="/faq" class="px-5 py-2">FAQ</router-link>
           </li>
-          <li class="px-3 py-2 text-center">
-            <router-link to="/contact" class="nav-link">聯絡我們</router-link>
+          <li class="text-center">
+            <router-link to="/contact" class="px-5 py-2">聯絡我們</router-link>
           </li>
         </ul>
       </div>
       <div class="mb-lg-0">
         <ul class="navbar-nav">
-          <li class="px-1 py-2 text-center">
-            <router-link to="/signUp" class="nav-link">註冊</router-link>
+          <li class="text-center">
+            <router-link to="/signUp" class="px-3 py-2">註冊</router-link>
           </li>
-          <li class="px-1 py-2 text-center">
-            <router-link to="/signIn" class="nav-link">登入</router-link>
+          <li class="text-center">
+            <router-link to="/signIn" class="px-3 py-2">登入</router-link>
           </li>
-          <li class="mx-auto ms-lg-5">
+          <li class="ms-lg-5">
             <a
               class="btn btn-white btn-signUp border-0 d-flex justify-content-center align-items-center"
             >
@@ -57,18 +61,22 @@
           class="navbar-toggler py-3"
           src="@/assets/img/menu.svg"
           data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
+          data-bs-target="#navbarMobile"
+          aria-controls="navbarMobile"
           aria-expanded="false"
           aria-label="Toggle navigation"
           alt="menu"
-          @click="openNavbar"
+          style="cursor: pointer"
         />
       </div>
-      <div class="collapse navbar-collapse bg-header" id="navbarNav">
+      <div class="collapse navbar-collapse bg-header" id="navbarMobile">
         <ul class="navbar-nav pt-6">
           <li class="nav-item text-center mb-1 mb-lg-0">
-            <router-link to="/product" class="nav-link px-3 py-2">產品</router-link>
+            <router-link
+              :to="{ name: 'product', params: { productName: 'Diane' } }"
+              class="nav-link px-3 py-2"
+              >產品</router-link
+            >
           </li>
           <li class="nav-item text-center mb-1 mb-lg-0">
             <router-link to="/aboutUs" class="nav-link px-3 py-2">關於我們</router-link>
@@ -105,14 +113,25 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { onMounted, ref } from 'vue';
+import { Collapse } from 'bootstrap';
 
-const isOpenToggler = ref(false);
+const myNavbar: any = ref('');
 
-const openNavbar = () => {
-  isOpenToggler.value = !isOpenToggler.value;
-  console.log('open');
-};
+onMounted(() => {
+  var myCollapse: any = document.getElementById('navbarMobile');
+  const bsCollapse = new Collapse(myCollapse, {
+    toggle: false
+  });
+  myNavbar.value = bsCollapse;
+
+  const navLinks = document.querySelectorAll('.nav-item');
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      bsCollapse.toggle();
+    });
+  });
+});
 </script>
 
 <style scoped></style>

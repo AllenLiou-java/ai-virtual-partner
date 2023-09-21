@@ -1,5 +1,6 @@
 // purple-colors-map
-$purple-200: #e9e2f3;
+$purple-100: #e9e2f3;
+$purple-200: #300871;
 $purple-300: #6d01f7;
 $purple-400: #6e01f8;
 $purple-500: #7000ff;
@@ -15,6 +16,7 @@ $primary: $white;
 
 // theme-colors-map
 $theme-colors: (
+  'primary-100': $purple-100,
   'primary-200': $purple-200,
   'primary-300': $purple-300,
   'primary-400': $purple-400,
@@ -28,7 +30,7 @@ $theme-colors: (
 );
 
 // spacer-variables-maps
-// 取得index = px/16/0.25; (例如：24px，24/16/0.25=6
+// 取得index = px/4; (例如：24px，24/4=6)
 $spacer: 1rem;
 $spacers: (
   0: 0,
@@ -51,8 +53,12 @@ $spacers: (
   17: $spacer * 4.25,
   19: $spacer * 4.75,
   20: $spacer * 5,
+  24: $spacer * 6,
+  31: $spacer * 7.75,
   34: $spacer * 8.5,
-  36: $spacer * 9
+  36: $spacer * 9,
+  40: $spacer * 10,
+  100: $spacer * 25
 );
 
 $body-color: $white;
@@ -84,7 +90,7 @@ $font-family-sans-serif:
   'Noto Color Emoji';
 
 $font-size-base: 1rem;
-// 取得index = px/16/0.25; (例如：24px，24/16/0.25=6
+// 取得index = px/4; (例如：24px，24/4=6)
 $font-sizes: (
   4: $font-size-base,
   5: $font-size-base * 1.25,
@@ -116,3 +122,30 @@ $input-border-color: $dark;
 $input-border-width: 0;
 $input-border-radius: 0;
 $input-placeholder-color: $purple-800;
+
+// form-floating-variables
+$form-floating-padding-y: 0.5rem;
+$form-floating-line-height: 1.5;
+
+// 取得index = px*2.5; (例如：24px，24*2.5=60)
+$ls-spacer: 1rem;
+$ls-spacers: (
+  0: 0,
+  4: $ls-spacer * 0.1,
+  12: $ls-spacer * 0.3,
+  35: $ls-spacer * 0.875,
+  40: $ls-spacer,
+  50: $ls-spacer * 1.25,
+  60: $ls-spacer * 1.5,
+  65: $ls-spacer * 1.625,
+  80: $ls-spacer * 2,
+  100: $ls-spacer * 2.5,
+  110: $ls-spacer * 2.75,
+  120: $ls-spacer * 3,
+  140: $ls-spacer * 3.5,
+  160: $ls-spacer * 4,
+  200: $ls-spacer * 5,
+  240: $ls-spacer * 6
+);
+
+$enable-rfs: false;
