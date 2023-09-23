@@ -1,7 +1,8 @@
 <template>
   <!-- for pc -->
   <nav
-    class="navbar navbar-expand-lg bg-header py-4 d-none d-lg-block border-bottom position-absolute"
+    class="navbar navbar-expand-lg bg-header py-4 d-none d-lg-block position-absolute"
+    :class="route.path === '/' ? 'border-bottom' : ''"
   >
     <div class="container d-flex justify-content-between align-items-center">
       <h1 class="fs-8 font-Shrikhand fw-normal">
@@ -115,8 +116,11 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue';
 import { Collapse } from 'bootstrap';
+import { useRoute } from 'vue-router';
+// import { watch } from 'vue';
 
 const myNavbar: any = ref('');
+const route = useRoute();
 
 onMounted(() => {
   var myCollapse: any = document.getElementById('navbarMobile');

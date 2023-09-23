@@ -23,3 +23,14 @@
     }
   }
 }
+
+.hover-navbar {
+  background-color: $dark;
+  cursor: pointer;
+  li:hover {
+    a {
+      background-color: $white;
+      color: $purple-500;
+    }
+  }
+}

@@ -10,9 +10,8 @@ export interface PostListType {
   id: number,
   name: string,
   address: string,
-  comment:
-  string,
-  product: string,
+  comment:string,
+  product?: string,
   textColor: string,
   textColorClass: string,
   bgColorClass: string
@@ -24,4 +23,12 @@ export interface personalityType {
   type: string,
   typeDescription: string,
   bgClass: string
+}
+
+export interface productContentType {
+  name: string,
+  type: string,
+  typeGroup: string,
+  description: Array<string>,
+  postList: Array<PostListType>
 }
