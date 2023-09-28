@@ -17,7 +17,7 @@ export interface PostListType {
   bgColorClass: string
 }
 
-export interface personalityType {
+export interface PersonalityType {
   index: number,
   name: string,
   type: string,
@@ -25,10 +25,25 @@ export interface personalityType {
   bgClass: string
 }
 
-export interface productContentType {
+export interface ProductContentType {
   name: string,
   type: string,
   typeGroup: string,
   description: Array<string>,
   postList: Array<PostListType>
+}
+
+export interface NewsItemType {
+  idxNo: string,
+  duration: string,
+  title: string,
+  overview: string,
+  detailContent?: string
+  imageName: string,
+  imageNameMobile?: string
+}
+
+export interface FaqItemType {
+  question: string,
+    answer: string
 }

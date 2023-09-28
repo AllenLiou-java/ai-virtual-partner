@@ -9,6 +9,7 @@ const Faq = () => import('@/views/FaqView.vue');
 const Contact = () => import('@/views/ContactView.vue');
 const SignUp = () => import('@/views/SignUpView.vue');
 const SignIn = () => import('@/views/SignInView.vue');
+const IconAll = () => import('@/views/IconView.vue');
 
 const routes: RouteRecordRaw[] = [
   {
@@ -37,7 +38,7 @@ const routes: RouteRecordRaw[] = [
     component: NewsDetail
   },
   {
-    path: '/faq',
+    path: '/faq/:topic',
     name: 'faq',
     component: Faq
   },
@@ -55,6 +56,11 @@ const routes: RouteRecordRaw[] = [
     path: '/signIn',
     name: 'sign_in',
     component: SignIn
+  },
+  {
+    path: '/icon',
+    name: 'icon',
+    component: IconAll
   }
 ];
 
@@ -64,5 +70,9 @@ const options: RouterOptions = {
 };
 
 const router: Router = createRouter(options);
+
+router.afterEach((to, from, next) => {
+	window.scrollTo(0, 0);
+});
 
 export default router;

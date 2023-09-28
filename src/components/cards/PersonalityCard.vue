@@ -26,11 +26,11 @@ import type { info } from 'console'; import type { info } from 'console';
 
 <script setup lang="ts">
 import { type PropType } from 'vue';
-import type { personalityType } from '@/type/home';
+import type { PersonalityType } from '@/type/home';
 
 defineProps({
   personality: {
-    type: Object as PropType<personalityType>,
+    type: Object as PropType<PersonalityType>,
     required: true
   }
 });

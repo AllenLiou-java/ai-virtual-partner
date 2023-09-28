@@ -5,7 +5,7 @@
     >
       <div>
         <h1 class="font-Shrikhand fs-8 fw-normal mb-2 mb-lg-0">ALPHABOX+</h1>
-        <p class="fs-4 fw-bold d-none d-lg-block">Copyright © 2023 Hexschool.</p>
+        <p class="fs-4 fw-bold d-none d-lg-block mb-0">Copyright © 2023 Hexschool.</p>
       </div>
       <img
         src="@/assets/img/emergency.svg"
@@ -26,7 +26,7 @@
           >
         </li>
         <li class="mb-2 mb-lg-0">
-          <router-link to="/faq" class="text-dark fw-bold">常見問題</router-link>
+          <router-link to="/faq/aboutUse" class="text-dark fw-bold">常見問題</router-link>
         </li>
         <li class="mb-2 mb-lg-0">
           <router-link to="/" class="text-dark fw-bold">隱私政策</router-link>
@@ -39,4 +39,4 @@
 
 <script setup lang="ts"></script>
 
-<style scoped></style>
+<style lang="scss" scoped></style>

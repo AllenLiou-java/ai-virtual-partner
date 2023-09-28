@@ -1,9 +1,7 @@
 <template>
-  <div>
-    <AppHeader />
-    <div class="pt-17 pt-lg-20">
-      <RouterView />
-    </div>
+  <AppHeader />
+  <div class="pt-17 pt-lg-20">
+    <RouterView />
   </div>
   <Appfooter />
 </template>

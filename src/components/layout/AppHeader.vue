@@ -24,7 +24,7 @@
             <router-link to="/news" class="px-5 py-2">最新消息</router-link>
           </li>
           <li class="text-center">
-            <router-link to="/faq" class="px-5 py-2">FAQ</router-link>
+            <router-link to="/faq/aboutUse" class="px-5 py-2">FAQ</router-link>
           </li>
           <li class="text-center">
             <router-link to="/contact" class="px-5 py-2">聯絡我們</router-link>
@@ -54,7 +54,10 @@
   <!-- for mobile -->
   <nav class="navbar navbar-expand-lg bg-primary-300 py-0 fixed-top d-block d-lg-none">
     <div>
-      <div class="container d-flex justify-content-between align-items-center border-bottom">
+      <div
+        class="container d-flex justify-content-between align-items-center"
+        :class="route.path === '/' ? 'border-bottom' : ''"
+      >
         <h1 class="fs-6 font-Shrikhand fw-normal">
           <router-link to="/" class="text-decoration-none">ALPHABOX+</router-link>
         </h1>
@@ -86,7 +89,7 @@
             <router-link to="/news" class="nav-link px-3 py-2">最新消息</router-link>
           </li>
           <li class="nav-item text-center mb-1 mb-lg-0">
-            <router-link to="/faq" class="nav-link px-3 py-2">FAQ</router-link>
+            <router-link to="/faq/aboutUse" class="nav-link px-3 py-2">FAQ</router-link>
           </li>
           <li class="nav-item text-center mb-1 mb-lg-0">
             <router-link to="/contact" class="nav-link px-3 py-2">聯絡我們</router-link>

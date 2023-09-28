@@ -1,0 +1,22 @@
+<template>
+  <svg xmlns="http://www.w3.org/2000/svg" width="155" height="24" viewBox="0 0 155 24" fill="none">
+    <mask
+      id="mask0_364_6359"
+      style="mask-type: alpha"
+      maskUnits="userSpaceOnUse"
+      x="0"
+      y="0"
+      width="155"
+      height="24"
+    >
+      <rect width="155" height="24" fill="#D9D9D9" />
+    </mask>
+    <g mask="url(#mask0_364_6359)">
+      <path d="M142 19L145.425 13H2V11H145.425L142 5L153 12L142 19Z" fill="white" />
+    </g>
+  </svg>
+</template>
+
+<script setup lang="ts"></script>
+
+<style scoped></style>

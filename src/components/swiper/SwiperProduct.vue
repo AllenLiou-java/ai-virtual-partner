@@ -9,16 +9,17 @@
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev'
       }"
+      @swiper="onSwiper"
     >
       <SwiperSlide v-for="img in imageList" :key="img">
         <img :src="getImageUrl(img)" alt="productImg" />
       </SwiperSlide>
     </Swiper>
     <div class="swiper-button-prev">
-      <IconArrowPrev />
+      <IconCircleArrowPrev />
     </div>
     <div class="swiper-button-next">
-      <IconArrowNext />
+      <IconCircleArrowNext />
     </div>
   </div>
 </template>
@@ -29,6 +30,10 @@ import 'swiper/scss';
 import 'swiper/scss/navigation';
 import { Navigation } from 'swiper/modules';
 import { ref } from 'vue';
+import { watch } from 'vue';
+import { useRoute } from 'vue-router';
+
+const route = useRoute();
 
 defineProps<{
   imageList: string[];
@@ -39,6 +44,18 @@ const modules = ref([Navigation]);
 const getImageUrl = (name: string) => {
   return new URL(`../../assets/img/week8-ai/${name}`, import.meta.url).href;
 };
+
+const mySwiper = ref();
+const onSwiper = (swiper: any) => {
+  mySwiper.value = swiper;
+};
+
+watch(
+  () => route.params.productName,
+  function () {
+    mySwiper.value.slideTo(0);
+  }
+);
 </script>
 
 <style lang="scss" scoped>

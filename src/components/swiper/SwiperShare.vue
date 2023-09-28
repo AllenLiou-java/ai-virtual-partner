@@ -59,19 +59,18 @@
 <script setup lang="ts">
 import { Scrollbar } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/vue';
-import { ref, type PropType } from 'vue';
+import { ref } from 'vue';
 import type { PostListType } from '@/type/home';
 
 import 'swiper/scss/scrollbar';
 
 const modules = ref([Scrollbar]);
 
-defineProps({
-  postList: {
-    type: Array as PropType<PostListType[]>,
-    required: true
-  }
-});
+export interface Props {
+  postList: PostListType[];
+}
+
+defineProps<Props>();
 
 const breakpoints = ref<any>({
   992: {

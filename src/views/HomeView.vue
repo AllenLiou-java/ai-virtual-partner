@@ -382,13 +382,9 @@
 
 <script setup lang="ts">
 import imgSrc from '@/assets/img/week8-ai/carousel.png';
-// import ImgDianeVertical from '@/assets/img/week8-ai/diane_vertical.png';
-// import ImgFelixVertical from '@/assets/img/week8-ai/felix_vertical.png';
-// import ImgKarinaVertical from '@/assets/img/week8-ai/karina_vertical.png';
-// import ImgVitoVertical from '@/assets/img/week8-ai/vito_vertical.png';
 
 import { ref } from 'vue';
-import type { IntroductDataType, PostListType, personalityType } from '@/type/home';
+import type { IntroductDataType, PostListType, PersonalityType } from '@/type/home';
 
 const introductData = ref<IntroductDataType[]>([
   {
@@ -464,7 +460,7 @@ const submitHandler = (e: Event) => {
   return false;
 };
 
-const personalityList = ref<personalityType[]>([
+const personalityList = ref<PersonalityType[]>([
   {
     index: 1,
     name: 'Diane',

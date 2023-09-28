@@ -169,7 +169,7 @@
 </template>
 
 <script setup lang="ts">
-import type { productContentType } from '@/type/home';
+import type { ProductContentType } from '@/type/home';
 import { onMounted, ref, watch } from 'vue';
 import { useRoute } from 'vue-router';
 
@@ -191,7 +191,7 @@ onMounted(() => {
 });
 
 // 產品介紹資料
-const productList = ref<productContentType[]>([
+const productList = ref<ProductContentType[]>([
   {
     name: 'Diane',
     type: '知識型',
@@ -369,7 +369,7 @@ const productList = ref<productContentType[]>([
     ]
   }
 ]);
-const productContent = ref<productContentType>({
+const productContent = ref<ProductContentType>({
   name: '',
   type: '',
   typeGroup: '',
@@ -377,7 +377,7 @@ const productContent = ref<productContentType>({
   postList: []
 });
 const filterProductList = (productName: string | string[]) => {
-  const filterContent: productContentType = productList.value.filter(item => {
+  const filterContent: ProductContentType = productList.value.filter(item => {
     return item.name === productName;
   })[0];
   productContent.value = filterContent;
@@ -407,11 +407,6 @@ const filterProductImgList = (productName: string) => {
   })[0];
   productImg.value = filterProductImg[productName];
 };
-
-// const getImageUrl = (name: string) => {
-//   console.log(import.meta.url);
-//   return new URL(`../assets/img/week8-ai/${name}`, import.meta.url).href;
-// };
 </script>
 
 <style lang="scss" scoped>

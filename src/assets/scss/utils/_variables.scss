@@ -59,6 +59,7 @@ $spacers: (
   31: $spacer * 7.75,
   34: $spacer * 8.5,
   36: $spacer * 9,
+  39: $spacer * 9.75,
   40: $spacer * 10,
   54: $spacer * 13.5,
   100: $spacer * 25
@@ -152,3 +153,17 @@ $ls-spacers: (
 );
 
 $enable-rfs: false;
+
+$pagination-color: #fff;
+$pagination-bg: transparent;
+$pagination-border-width: 0;
+
+$pagination-focus-color: #fff;
+$pagination-focus-bg: transparent;
+$pagination-focus-box-shadow: transparent;
+
+$pagination-hover-color: $purple-500;
+$pagination-hover-bg: transparent;
+
+$pagination-active-color: #fff;
+$pagination-active-bg: transparent;
